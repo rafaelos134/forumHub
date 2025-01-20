@@ -14,4 +14,4 @@ public class ForumHubApplication {
 		SpringApplication.run(ForumHubApplication.class, args);
 	}
 
-}
+} //commit
