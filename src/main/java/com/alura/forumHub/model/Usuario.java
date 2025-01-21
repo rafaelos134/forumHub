@@ -1,39 +1,66 @@
 package com.alura.forumHub.model;
 
 import jakarta.persistence.*;
-import jakarta.transaction.Transactional;
-import jakarta.validation.constraints.NotEmpty;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.Collection;
+import java.util.List;
 
-
-@Entity
-public class Usuario {
+@Table(name = "Usuario")
+@Entity(name = "Usuario")
+public class Usuario implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty
-    private String nome;
+    @Column(name = "login")
+    private String login;
 
-    @NotEmpty
-    private String email;
-
-    @NotEmpty
+    @Column(name = "senha")
     private String senha;
 
-    @Column(unique = true)
-    private String username;
-
-    private String password;
-
-    public String getUsername() {
-        return username;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of();
     }
 
+    @Override
     public String getPassword() {
-        return password;
+        return senha;
     }
 
-    // Getters e setters
+    @Override
+    public String getUsername() {
+        return login;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
 }
