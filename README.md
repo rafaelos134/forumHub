@@ -27,7 +27,7 @@ Essas operações seguem o padrão CRUD (Create, Read, Update, Delete) e foram i
 
 - **Spring Boot**: Framework para desenvolvimento de aplicações Java com suporte a microservices e APIs REST.
 - **JPA/Hibernate**: ORM para persistência de dados em banco relacional.
-- **Banco de Dados Relacional**: MySQL, PostgreSQL ou outro banco de dados relacional compatível.
+- **Banco de Dados Relacional**: MySQL.
 - **Spring Security**: Biblioteca para implementar autenticação e autorização de usuários.
 
 
